@@ -33,13 +33,10 @@
 표기법은 각 언어별 관행을 따른다
 
 - html/css
-  - 스네이크 표기법  
-    ex) main_view
+  - 스네이크 표기법  ex) main_view
   - 해당섹션의 대표 영역만 id로, 나머지는 class로 작성
   
 - javascript
-  - 카멜 표기법
-    ex) mainView
+  - 카멜 표기법  ex) mainView
     
-변수명 작성은 분류가 큰 순서로 작성
-ex) mainViewSelectBtn
+변수명 작성은 분류가 큰 순서로 작성  ex) mainViewSelectBtn
