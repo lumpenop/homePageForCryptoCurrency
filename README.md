@@ -10,12 +10,12 @@
 3. 암호화폐 시세 분석 및 자동매매 알고리즘 구현
 
 #### 팀원
-- main page 
+- main page
   - 김승원
   - 강지현
 - user page 
   - 이승희
-- back end model
+- back end
   - 오미희
 
 #### 사용 기술
