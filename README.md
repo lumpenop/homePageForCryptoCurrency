@@ -31,6 +31,7 @@
 
 ##### 변수명 설정
 표기법은 각 언어별 관행을 따른다
+변수명 작성은 분류가 큰 순서로 작성, 최종적으로 변수/함수의 역할 작성  ex) mainViewSelectBtn
 
 - html/css
   - 스네이크 표기법  ex) main_view
@@ -39,4 +40,3 @@
 - javascript
   - 카멜 표기법  ex) mainView
     
-변수명 작성은 분류가 큰 순서로 작성  ex) mainViewSelectBtn
