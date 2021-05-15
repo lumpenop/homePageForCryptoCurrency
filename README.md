@@ -34,7 +34,7 @@
 변수명 작성은 분류가 큰 순서로 작성, 최종적으로 변수/함수의 역할 작성  ex) mainViewSelectBtn
 
 - html/css
-  - 스네이크 표기법  ex) main_view
+  - 케밥 표기법  ex) main-view
   - 해당섹션의 대표 영역만 id로, 나머지는 class로 작성
   
 - javascript
