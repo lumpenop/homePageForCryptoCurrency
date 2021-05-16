@@ -1,0 +1,100 @@
+ul,li{
+    text-decoration: none;
+}
+
+.login_wrapper,.signup_wrapper{
+    margin:0 auto;
+    width:600px;
+    height:700px;
+    border:2px solid black; 
+    padding-left:25px;
+    padding-right:25px;
+}
+
+.submit{
+    margin:0 auto;
+    display:block;
+    width:550px;
+    height:50px;
+    border-radius:4px;
+    border:0;
+    background-color:rgb(225,57,40);
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+}
+
+h1{
+    margin:40px;
+    text-align: center;
+}
+
+.box_subtitle{
+    text-align: center;
+    color:grey;
+    font-weight:bold;
+    margin-top:20px;
+    margin-bottom:50px;
+}
+
+#email,#password,#password_chk{
+    width:550px;
+    height:30px;
+}
+
+.signup_bar{
+    display:inline-block;
+    width:200px;
+    height:2px;
+    background-color: black ;
+}
+
+.inblock{
+    display:inline-block;
+}
+
+.loginbtn{
+    margin:0 auto;
+    margin-top:20px;
+    display:block;
+    width:400px;
+    height:50px;
+    border-radius:4px;
+    border:0;
+    background-color:rgb(225,57,40);
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+
+}
+
+#login_email,#login_password{
+    margin:0 auto;
+    margin-top:10px;
+    display:block;
+    width:385px;
+    height:30px;
+    padding:4px;
+}
+
+.login_userbtn{
+    display:flex;
+    flex-direction:column-reverse;
+}
+.login_basic{
+    margin-left:300px;
+}
+
+.red{
+    margin-left:20px;
+    color:rgb(225,57,40);
+}
+
+.mt20{
+    display:inline-block;
+    margin-top:20px;
+}
+
+.ftbold{
+    font-weight:bold;
+}
