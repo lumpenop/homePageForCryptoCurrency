@@ -1,19 +1,27 @@
 ul,li{
-    text-decoration: none;
+    list-style: none;
 }
 
-.login_wrapper,.signup_wrapper{
+*{margin:0; padding:0}
+
+input{
+    font-weight: bold;
+}
+
+.login_wrapper,.signup_wrapper,.form_agree_wrapper,.findpw_wrapper{
     margin:0 auto;
-    width:600px;
+    width:550px;
     height:700px;
     border:2px solid black; 
-    padding-left:25px;
-    padding-right:25px;
+    padding-left:50px;
+    padding-right:50px;
+    
+    
 }
 
 .submit{
     margin:0 auto;
-    display:block;
+    display:inline-block;
     width:550px;
     height:50px;
     border-radius:4px;
@@ -38,20 +46,13 @@ h1{
 }
 
 #email,#password,#password_chk{
-    width:550px;
-    height:30px;
+    width:530px;
+    height:40px;
+    padding-left:10px;
+    padding-right:10px;
 }
 
-.signup_bar{
-    display:inline-block;
-    width:200px;
-    height:2px;
-    background-color: black ;
-}
 
-.inblock{
-    display:inline-block;
-}
 
 .loginbtn{
     margin:0 auto;
@@ -97,4 +98,71 @@ h1{
 
 .ftbold{
     font-weight:bold;
+}
+
+/****************sign up********************************/
+
+.signup_number{
+    margin:0 auto;
+    width:300px;
+    height:30px;
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.inblock{
+    display:inline-block;
+}
+
+.signup_bar{
+    display:inline-block;
+    width:100px;
+    height:1px;
+    margin-bottom:3px;
+    margin-left:15px;
+    background-color: black ;
+    
+}
+
+.ft_16{
+    font-size:16px;
+}
+
+/********************signup_agree********************************/
+.form_agree_wrapper{
+    height:1200px !important; 
+    text-align: center;
+}
+
+.scrollbox{
+    margin:0 auto;
+    width:400px;
+    height:100px;
+    overflow-y: auto;
+
+    
+}
+
+.bullet_box{
+    margin:0 auto;
+    width:400px;
+    height:50px;
+    background-color:#ececec;
+
+}
+
+.signup_span{
+    color:gray;
+}
+
+.mt30{
+    margin-top:30px;
+}
+
+.mb20{
+    margin-bottom:20px;
+}
+
+.ft10{
+    font-size:14px;
 }
