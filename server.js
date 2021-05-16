@@ -6,4 +6,5 @@ const port = env.SERVER_PORT || 3001;
 
 app.listen(3000, ()=>{
     console.log('it works!');
+    console.log('main1');
 })
