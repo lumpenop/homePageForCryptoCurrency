@@ -10,14 +10,14 @@
 <body>
     {% include header %} 
 <div class="form_agree_wrapper">
-    <div class= "user_form">
+    <form class= "user_form" action="/user/signup/form" method="post">
         <h1>회원가입</h1>
         <div class = "signup_number">
             <h5 class= "inblock ft_16 red">약관동의</h5>
             <div class= "signup_bar"></div>
             <h5 class= "inblock ft_16">정보입력</h5>
         </div>
-        <h4><input type="checkbox">아래 모든 항목에 동의합니다</h4>
+        <h4><input class="chk_necessary_all" type="checkbox" >아래 모든 항목에 동의합니다</h4>
         <p class="signup_text mt30 mb20 ftbold" ><label for="email" >허니비 이용약관<span class = "signup_span">(필수)</span></p>
         <div class = "scrollbox">
             <h6>기본 약관의 주요 내용 고지</h6>
@@ -30,7 +30,7 @@
                 <ol>회원이 회사의 서비스를 이용하여 가상자산을 거래하였을 경우, 해당 가상자산의 거래내역은 허니비 거래서비스 시스템에 기록이 됩니다. 회사는 허니비 내 가상자산 거래 과정에서 체결된 거래에 관하여 일정한 수수료를 지급받습니다.</ol>
             </ul>    
         </div>
-        <input type = "checkbox" class="mt20">동의합니다
+        <input type = "checkbox"  class="mt20 chk_necessary1" name="chk">동의합니다
         <p class="signup_text mt30 mb20 ftbold" ><label for="email" >개인정보 수집 및 이용<span>(필수)</span></p>
         <div class="scrollbox">
             <ul>
@@ -278,8 +278,8 @@
                 </li>
             </ul>
         </div>
-        <input class = "mt20" type = "checkbox">동의합니다
-        <p class="signup_text mt30 mb20 ftbold" ><label for="email" >개인정보 수집 및 이용<span>(필수)</span></p>
+        <input class = "mt20 chk_necessary2" type = "checkbox" name="chk">동의합니다
+        <p class="signup_text mt30 mb20 ftbold" ><label for="email" >이벤트 및 정보 수집 안내<span>(선택)</span></p>
         <p class = "mb20 ft10">동의 시, 정기 발간되는 유용한 리서치, 상장 정보, 특별한 혜택을</br>
              가장 빠르게 받아 보실 수 있습니다.</p>
         <div class="scrollbox">
@@ -299,13 +299,15 @@
                 </li>
             </ul>
         </div>
-        <input type = "checkbox" class="mt20 mb20">동의합니다
+        <input type = "checkbox" class="mt20 mb20 chk_optional" name="chk" value ="1">동의합니다
             <ul class = "bullet_box mb20">
                 <li>19세 미만은 회원 자격이 없으며, 서비스 이용이 제한됩니다.</li>
             </ul>
-        <button class="submit mt20">다음</button>
-    </div>
+        <input type="submit" class="submit mt20"  value = "다음" >
+        </form>
 </div>
+<script type = "text/javascript" src="../../public/user/signup_agree.js"> 
+</script>
 {% include footer %} 
 </body>
 </html>
