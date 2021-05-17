@@ -42,13 +42,13 @@ app.use('/',router);
 })
 */
 app.use(bodyParser.urlencoded({extended:false}));
-sequelize.sync({force:true})
-.then(()=>{
-    console.log('succ');
-})
-.catch((err)=>{
-    console.log(err);
-})
+// sequelize.sync({force:true})
+// .then(()=>{
+//     console.log('succ');
+// })
+// .catch((err)=>{
+//     console.log(err);
+// })
 
 
 
