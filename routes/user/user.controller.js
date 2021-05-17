@@ -32,3 +32,5 @@ let pwSuccess = (req,res) =>{
 module.exports={
     login,signUp,signupForm,signSuccess,findPw,pwSuccess,
 }
+
+//fighiting;;
