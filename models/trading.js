@@ -35,7 +35,7 @@ module.exports ={
                 buyTime:{
                     type:Sequelize.DATEONLY,
                     allowNull:false,        
-                    defaultValue:Sequelize.NOW,
+                    defaultValue:Sequelize.NOW(),
                     get:function(){
                         return moment(this.getDataValue('buyTime')).format('YYYY-MM-DD-HH-mm-ss')
                     }            
