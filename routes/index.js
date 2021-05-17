@@ -5,11 +5,12 @@ const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
 const fs = require('fs');
 const log = console.log;
+const userRouter = require('./user/index');
 
-
-router.get('/',(req,res)=>{
+router.use('/user',userRouter);
+/*router.get('/',(req,res)=>{
            /* data.title = $(this).find('div.news_wrap.api_ani_send div.news_area a.news_tit').attr('title');*/  
-           const getHtml = async () => {
+           /*const getHtml = async () => {
             try {
               return await axios.get("https://www.yna.co.kr/sports/all");
             } catch (error) {
@@ -33,7 +34,7 @@ router.get('/',(req,res)=>{
                     summary: $(this).find('p.lead').text().slice(0, -11),
                     date: $(this).find('span.p-time').text()
                     */
-                };
+              /*  };
               });
           
               const data = ulList.filter(n => n.title);
@@ -43,6 +44,7 @@ router.get('/',(req,res)=>{
             getHtml();
 })
 
-  
+  */
 
 module.exports = router;
+

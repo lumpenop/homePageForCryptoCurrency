@@ -31,10 +31,6 @@ window.onload=function(){
     submits.setAttribute('disabled','true');
 }
 
-submits.addEventListener('click',()=>{
-    console.log('버튼클릭됨');
-})
-
 
 window.addEventListener('change',()=>{
     let chk1= document.querySelector('.chk_necessary1');
@@ -42,9 +38,7 @@ window.addEventListener('change',()=>{
 
     if(chk2.checked && chk1.checked){
         submits.removeAttribute('disabled');
-        console.log('다음됨');
     }else if(!chk2.checked || !chk1.checked){
         submits.setAttribute('disabled','true');
-        console.log('다음안됨');
     }
 })

@@ -5,16 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel = "stylesheet" href="../../css/user/user.css">
+    <link rel = "stylesheet" type = "text/css" href="/user/user.css">
 </head>
 <body>
     
 
-{% include header %} 
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <div class="signup_wrapper">
-    <form class= "user_form">
+    
+    <form class= "user_form" action = "/user/signup/success" method="post">
         <h1>회원가입</h1>
+        <input type="text" value = "{{chk}}" name = "add_option" class = "hidden">
         <div class = "signup_number">
             <h5 class= "inblock ft_16">약관동의</h5>
             <div class= "signup_bar"></div>
@@ -35,6 +36,11 @@
         </div>
         <p class="signup_text mt20" label for="password_chk" >비밀번호 확인</p>
         <input type = "password" id ="password_chk" class= "mt20" placehoder="비밀번호를 다시 입력해주세요">
+        <p class="signup_text mt20" label for="password_chk" >주민등록번호</br>
+        <input type = "text" class= "mt20 birth" name="birth" placehoder="주민등록번호 앞자리">
+        -
+        <input type = "text" name = "gender" class = "mt20 gender">
+        * * * * * *</p> </br>
         <p class = "signup_capcha mt20">캡챠인증</p>
         <button class="g-recaptcha" 
             data-sitekey="reCAPTCHA_site_key" 
@@ -51,8 +57,42 @@
     }
 </script>
 
-<script type = text/javascript src="../../public/user/usersignup_form.js"></script>
+<script type = "text/javascript" src="/user/usersignup_form.js"></script>
+<script type = "text/javascript">
+const fetch = require('node-fetch');
+//https://developer.mozilla.org/ko/docs/Web/API/Fetch_API/Using_Fetch 알아보기
+const url = `http://localhost:3000/user/userid_check?userid=${userid.value}`;
+const options = {method:'GET', headers:{Accept:'application/json'}};
 
-{% include footer %}
+
+async function getApi(){
+    const result = await fetch(url, options);
+    return result;
+}
+
+async function main(){
+    await getApi()
+}
+  
+/*
+async function userid_check(){
+    let data = await axios.get(`http://localhost:3000/user/userid_check?userid=${userid.value}`);
+    //http://localhost:3000/user/userid_ckeck?userid=${userid.value}
+    //AJAX가져옴> 중복> false 중복x>true
+    console.log(data);
+    login_flag = data.data.login;
+    if(login_flag){
+        userid_msg.innerHTML = '올바른 아이디 입니다.'
+        userid_msg.style.color = 'green';
+    }else{
+        userid_msg.innerHTML = '중복된 아이디 입니다.';
+        userid_msg.style.color = 'red';
+    }
+}
+    userid.addEventListener('focusout',userid_check);
+
+*/
+</script>
+
 </body>
 </html> 

@@ -10,12 +10,14 @@ const env = process.env;
 const port = env.SERVER_PORT || 3001;
 const cors = require('cors');
 const router = require('./routes/index')
-const session = require('express-session');
+//const session = require('express-session');
 
 app.set('view engine','html');
 nunjucks.configure('views',{
     express:app,
 })
+
+app.use(express.static('public'));
 
 //app.use(cors);
 /*
@@ -30,7 +32,7 @@ app.use(session({
 }))
 */
 
-app.use('/',router);
+
 
 // app.use('/',(req,res)=>{
 //     res.render('./index.html');
@@ -51,7 +53,7 @@ sequelize.sync({force:true})
 })
 
 
-
+app.use('/',router);
 
 app.listen(port, ()=>{
     console.log('it works!',port);

@@ -4,7 +4,7 @@ const moment = require('moment');
 module.exports = class Join extends Sequelize.Model{
     static init(sequelize){
         return super.init({
-            id:{
+            email:{
                 type:Sequelize.STRING(40),
                 allowNull:false,               
             },
@@ -12,10 +12,10 @@ module.exports = class Join extends Sequelize.Model{
                 type:Sequelize.STRING(40),
                 allowNull:false,
             },
-            name:{
+            /*name:{
                 type:Sequelize.STRING(20),
                 allowNull:false,
-            },
+            },*/
             birth:{
                 type:Sequelize.INTEGER(11),
                 allowNull:false,
@@ -27,19 +27,19 @@ module.exports = class Join extends Sequelize.Model{
                 type:Sequelize.BOOLEAN,
                 allowNull:false,
             },
-            contact:{
+            /*contact:{
                 type:Sequelize.INTEGER(11),
                 allowNull:false,
                 get:function(){
                     return (this.getDataValue('contact')).format('000-0000-0000')
                 }
-            },
+            },*//*
             useridx:{
                 type:Sequelize.INTEGER,
                 autoIncrement:true,
                 primaryKey:true,
                 unique:true,
-            },
+            },*/
             add_option:{
                 type:Sequelize.BOOLEAN,
             },            
