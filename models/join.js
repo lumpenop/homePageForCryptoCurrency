@@ -40,7 +40,9 @@ module.exports = class Join extends Sequelize.Model{
                 primaryKey:true,
                 unique:true,
             },
-            /*
+            add_option:{
+                type:Sequelize.BOOLEAN,
+            },            
             userdt:{
                 type:Sequelize.DATEONLY,
                 allowNull:false,
@@ -51,8 +53,8 @@ module.exports = class Join extends Sequelize.Model{
                     //위에 moment가져와서 할당해줘야 사용가능
                     //this.getDataValue로 값을 가져오고 .format으로 형식 설정 
                 }
-            }
-            */
+            },
+            
         },{
             sequelize,
             timestamps:false,

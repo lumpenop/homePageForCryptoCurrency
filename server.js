@@ -1,3 +1,4 @@
+  
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -17,7 +18,7 @@ nunjucks.configure('views',{
 })
 
 //app.use(cors);
-
+/*
 app.use(session({
     secret:'aaa',
     resave:false,
@@ -27,25 +28,26 @@ app.use(session({
         secure:false
     }
 }))
+*/
 
 app.use('/',router);
 
-app.use('/',(req,res)=>{
-    res.render('./index.html');
-})
-app.use('/',(req,res,next)=>{
+// app.use('/',(req,res)=>{
+//     res.render('./index.html');
+// })
+/*app.use('/',(req,res,next)=>{
     const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
     error.status = 404;
     next(error);
 })
-
+*/
 app.use(bodyParser.urlencoded({extended:false}));
 sequelize.sync({force:true})
 .then(()=>{
     console.log('succ');
 })
-.catch(()=>{
-    console.log('fail');
+.catch((err)=>{
+    console.log(err);
 })
 
 
