@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto</title>
     <link rel="stylesheet" href="./main.css">
+    
 </head>
 <body>
     <div class="wrap">
@@ -58,14 +59,11 @@
                 </div>
                 <div class="coin_issue">
                     <h4>Coin issue</h4>
-                    <ul>
-                        <li>0</li>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                    </ul>
+                {% for item in issue %}               
+                <tr>
+                    <td>{{item.title}}</td>
+                </tr>
+                {% endfor %}
                 </div>
             </div>
         </section>
@@ -75,5 +73,6 @@
             </div>
         </footer>
     </div>
+    <script type="text/javascript" src="../../coin_issue.js"></script>
 </body>
 </html>
