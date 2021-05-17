@@ -12,8 +12,3 @@ router.get('/', controller.mainCon);
 <<<<<<< HEAD
 module.exports = router;
 */
-=======
-
-
-module.exports = router;
->>>>>>> jihyun
