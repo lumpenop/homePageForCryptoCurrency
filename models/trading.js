@@ -65,7 +65,6 @@ module.exports ={
                 status:{
                     type:Sequelize.BOOLEAN,
                     allowNull:false,
-                    //if order가 null이면 미체결 상태가 나오도록
                 }
 
             },{
