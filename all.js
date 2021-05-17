@@ -8,30 +8,38 @@ async function showPrice(item){
     const url2 = 'https://api.upbit.com/v1/ticker?markets='+item;
     const options2 = {method: 'GET', headers: {Accept: 'application/json'}};
 
-    const reponse = fetch(url2, options2);
-    const data = await reponse.then(res => res.json())
-    .then(json => console.log(json))
-    .catch(err => console.error('error:' + err));
+    const response = await fetch(url2, options2);
+    const data = await response.json();
+    
 
     return data;
 }
 
-function showAll(){
-    let marketArr = [];
-    const reponse = fetch(url, options);
-    const data = reponse.then(res => res.json())
-    .then(json => {
-        for(var i=0; i<50;i++){
-            if(!json[i].market.indexOf('KRW')){
-                marketArr.push(json[i].market);
-             
-            }
+async function showAll(){
+    const response = await fetch(url, options);
+    const result = await response.json();
+    let = marketArr = []
+    for(var i=0; i<result.length;i++){
+        if(!result[i].market.indexOf('KRW')){
+            
+            marketArr.push(result[i].market);
+            
         }
-        console.log(marketArr);
-    })
-    .catch(err => console.error('error:' + err));
-    return data;
+    }
+    
+    return marketArr;
 }
 
-const items = showAll();
-console.log(items)
+async function main(){
+    let arr = [];
+    const result = await showAll();
+    for(var i=0; i<10;i++){
+        console.log(await showPrice(result[i]), i);
+        setTimeout(function(){
+            
+        },2000);
+    }
+    
+}
+
+main();
