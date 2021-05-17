@@ -29,8 +29,11 @@ app.use(session({
     }
 }))
 */
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(express.static('public'));
 
 app.use('/',router);
+
 
 // app.use('/',(req,res)=>{
 //     res.render('./index.html');
@@ -41,14 +44,14 @@ app.use('/',router);
     next(error);
 })
 */
-app.use(bodyParser.urlencoded({extended:false}));
-sequelize.sync({force:true})
-.then(()=>{
-    console.log('succ');
-})
-.catch((err)=>{
-    console.log(err);
-})
+
+// sequelize.sync({force:true})
+// .then(()=>{
+//     console.log('succ');
+// })
+// .catch((err)=>{
+//     console.log(err);
+// })
 
 
 
