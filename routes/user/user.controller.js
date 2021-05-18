@@ -1,7 +1,6 @@
 const {Join} = require('../../models/index');
 
 let login = (req,res) =>{
-    console.log('router,,22')
     res.render('./user/login.html');
 }
 
@@ -10,8 +9,7 @@ let signUp= (req,res) =>{
 }
 //post
 let signupForm = async(req,res) =>{
-    let flag = req.body.chk[2];
-    console.log(flag);
+    let flag = await req.body.chk[2];
     res.render('./user/signup_form.html',{
         chk:flag
     })
@@ -24,11 +22,11 @@ let signSuccess = async(req,res) =>{
     let birthnumber = req.body.birth;
     let name = req.body.user_name;
     let add_option = req.body.add_option;
+    if (add_option =='') add_option =0;
     let phonenum1 = req.body.phone_num[0];
     let phonenum2 = req.body.phone_num[1];
     let phonenum3 = req.body.phone_num[2];
     let phonenum = phonenum1+phonenum2+phonenum3;
-    console.log(phonenum);
 
 
     try{
@@ -61,14 +59,19 @@ let info = async(req,res) =>{
     });
 }
 
-let idCheck = async(req,res)=>{
+let idCheck = async (req,res)=>{
     let idFlag = false;
+    
     let email = req.body.email;
     let result = await Join.findOne({
-        where:{email}
+        where:{email,}
     });
     if (result ==undefined) idFlag= true;
-    res.json({check:idFlag});
+    res.json({
+        check:idFlag,
+        email,
+    });
+    
 }
 /*
 let login_check = async (req,res) =>{
@@ -107,7 +110,7 @@ let logout = async(req,res)=>{
 let userid_check = async(req,res) =>{
     let userid = req.query.userid;
     let flag = false;
-    let result = await User.findOne({
+    let result = await User.findOne({fafd
         where:{userid}
     })
     

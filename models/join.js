@@ -42,6 +42,7 @@ module.exports = class Join extends Sequelize.Model{
             },*/
             add_option:{
                 type:Sequelize.BOOLEAN,
+                allowNull:true,
             },            
             userdt:{
                 type:Sequelize.DATEONLY,

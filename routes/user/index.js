@@ -4,7 +4,7 @@ const userController = require('./user.controller');
 
 
 router.get('/signup/agree',userController.signUp);
-router.get('/signup/idCheck',userController.idCheck);
+router.post('/signup/idCheck',userController.idCheck);
 router.post('/signup/form',userController.signupForm);
 router.post('/signup/success',userController.signSuccess);
 router.post('/findpw/success',userController.pwSuccess);

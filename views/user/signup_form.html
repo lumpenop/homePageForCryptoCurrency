@@ -21,10 +21,11 @@
             <div class= "signup_bar"></div>
             <h5 class= "inblock ft_16 red">정보입력</h5>
         </div>
-
+     
         <p class="signup_text mt20" ><label for="email" >이메일</p>
         <input type = "email"  id ="email" class= "mt20" name = "email" placehoder="이메일을 입력해주세요">
         <p class="idchk chk"></p><br>
+      
         <p class="signup_text mt20" label for="password" >비밀번호</p>
         <input type = "password" id ="password"  class= "mt20" name = "password" placehoder="비밀번호를 입력해주세요">
         <div class="signup_bullbox">
@@ -70,52 +71,41 @@
 
 <script type = "text/javascript" src="/user/usersignup_form.js"></script>
 <script type = "text/javascript">
-let idchk=document.querySelector('.idchk');
+
 let email = document.querySelector('#email');
 //////id 체크//////
 
 function id_check(){
-    let email = document.querySelector('#email');
+    let email2 = document.querySelector('#email').value;
+    let idchk=document.querySelector('.idchk');
      
     let data = {
         email:this.value
     }
 
-    fetch (`http:localhost:3001/user/idCheck`,{
-        method: "post",
+    fetch (`http://localhost:3001/user/signup/idCheck`,{
+        method: 'post',
         headers: { "Content-Type":  "application/json" },
-        body:Json.stringify(data)
+        body:JSON.stringify(data)
+    }).
+    then( res => {
+        return res.json();
     })
-    .then(res=>res.json())
-    .then(json => {
-        if(json.idFlag==true){
-            idchk.innerHTML= '올바른 아이디입니다.'
+    .then(json =>{
+        console.log(json);
+        if(json.check){
+            idchk.innerHTML = '올바른 아이디 입니다.'
         }else{
-            idchk.innerHTML= '중복된 아이디입니다.' 
+            idchk.innerHTML = "중복된 아이디 입니다."
         }
     })
+  
+    
 }
 
 email.addEventListener('focusout',id_check);
 
 
-
-
-const fetch = require('node-fetch');
-//https://developer.mozilla.org/ko/docs/Web/API/Fetch_API/Using_Fetch 알아보기
-const url = `http://localhost:3000/user/userid_check?userid=${userid.value}`;
-const options = {method:'GET', headers:{Accept:'application/json'}};
-
-
-async function getApi(){
-    const result = await fetch(url, options);
-    return result;
-}
-
-async function main(){
-    await getApi()
-}
-  
 /*
 async function userid_check(){
     let data = await axios.get(`http://localhost:3000/user/userid_check?userid=${userid.value}`);
