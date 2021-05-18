@@ -44,7 +44,6 @@ app.use('/',router);
     next(error);
 })
 */
-
 // sequelize.sync({force:true})
 // .then(()=>{
 //     console.log('succ');
