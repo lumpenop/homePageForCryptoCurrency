@@ -13,7 +13,7 @@
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <div class="signup_wrapper">
     
-    <form class= "user_form" action = "/user/signup/success" method="post">
+    <form name= "user_form" action = "/user/signup/success" method="post">
         <h1>회원가입</h1>
         <input type="text" value = "{{chk}}" name = "add_option" class = "hidden">
         <div class = "signup_number">
@@ -24,6 +24,7 @@
 
         <p class="signup_text mt20" ><label for="email" >이메일</p>
         <input type = "email"  id ="email" class= "mt20" name = "email" placehoder="이메일을 입력해주세요">
+        <p class="idchk chk"></p><br>
         <p class="signup_text mt20" label for="password" >비밀번호</p>
         <input type = "password" id ="password"  class= "mt20" name = "password" placehoder="비밀번호를 입력해주세요">
         <div class="signup_bullbox">
@@ -36,11 +37,20 @@
         </div>
         <p class="signup_text mt20" label for="password_chk" >비밀번호 확인</p>
         <input type = "password" id ="password_chk" class= "mt20" placehoder="비밀번호를 다시 입력해주세요">
+        <p class="pwchk chk"></p><br>
+        <p class="signup_text mt20" label for="user_name" >이름</p>
+        <input type = "text" id ="user_name" name = "user_name" class= "mt20" placehoder="이름">
         <p class="signup_text mt20" label for="password_chk" >주민등록번호</br>
         <input type = "text" class= "mt20 birth" name="birth" placehoder="주민등록번호 앞자리">
         -
         <input type = "text" name = "gender" class = "mt20 gender">
         * * * * * *</p> </br>
+        <p class="signup_text mt20" label for="phone_num" >핸드폰번호</br>
+            <input type = "text" class= "mt20 phone" name ="phone_num">
+            -
+            <input type = "text" class = "mt20 phone" name = "phone_num">
+            -
+            <input type = "text" class = "mt20 phone" name = "phone_num"></br></p>
         <p class = "signup_capcha mt20">캡챠인증</p>
         <button class="g-recaptcha" 
             data-sitekey="reCAPTCHA_site_key" 
@@ -52,6 +62,7 @@
         </form>
 </div>
 <script>
+
     function onSubmit(token) {
         document.getElementById("demo-form").submit();
     }
@@ -59,6 +70,37 @@
 
 <script type = "text/javascript" src="/user/usersignup_form.js"></script>
 <script type = "text/javascript">
+let idchk=document.querySelector('.idchk');
+let email = document.querySelector('#email');
+//////id 체크//////
+
+function id_check(){
+    let email = document.querySelector('#email');
+     
+    let data = {
+        email:this.value
+    }
+
+    fetch (`http:localhost:3001/user/idCheck`,{
+        method: "post",
+        headers: { "Content-Type":  "application/json" },
+        body:Json.stringify(data)
+    })
+    .then(res=>res.json())
+    .then(json => {
+        if(json.idFlag==true){
+            idchk.innerHTML= '올바른 아이디입니다.'
+        }else{
+            idchk.innerHTML= '중복된 아이디입니다.' 
+        }
+    })
+}
+
+email.addEventListener('focusout',id_check);
+
+
+
+
 const fetch = require('node-fetch');
 //https://developer.mozilla.org/ko/docs/Web/API/Fetch_API/Using_Fetch 알아보기
 const url = `http://localhost:3000/user/userid_check?userid=${userid.value}`;

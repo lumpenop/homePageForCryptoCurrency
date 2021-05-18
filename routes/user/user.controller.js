@@ -1,6 +1,7 @@
 const {Join} = require('../../models/index');
 
 let login = (req,res) =>{
+    console.log('router,,22')
     res.render('./user/login.html');
 }
 
@@ -21,12 +22,18 @@ let signSuccess = async(req,res) =>{
     let pw = req.body.password;
     let gender = req.body.gender;
     let birthnumber = req.body.birth;
-    let name = req.body.name;
+    let name = req.body.user_name;
     let add_option = req.body.add_option;
+    let phonenum1 = req.body.phone_num[0];
+    let phonenum2 = req.body.phone_num[1];
+    let phonenum3 = req.body.phone_num[2];
+    let phonenum = phonenum1+phonenum2+phonenum3;
+    console.log(phonenum);
+
 
     try{
         let rst = await Join.create({
-            email,pw,gender,name,add_option,birth:birthnum
+            email,pw,gender,name,add_option,contact:phonenum,birth:birthnumber
         })
     }catch(e){
         console.log(e);
@@ -47,8 +54,22 @@ let pwSuccess = (req,res) =>{
     })
 } 
 
+let info = async(req,res) =>{
+    let userList= await Join.findAll({});
+     res.render('./user/info.html',{
+         userList,
+    });
+}
 
-
+let idCheck = async(req,res)=>{
+    let idFlag = false;
+    let email = req.body.email;
+    let result = await Join.findOne({
+        where:{email}
+    });
+    if (result ==undefined) idFlag= true;
+    res.json({check:idFlag});
+}
 /*
 let login_check = async (req,res) =>{
     let userid = req.body.userid;
@@ -101,7 +122,7 @@ let userid_check = async(req,res) =>{
 }
 */
 module.exports={
-    login,signUp,signupForm,signSuccess,findPw,pwSuccess,
+    login,signUp,signupForm,signSuccess,findPw,pwSuccess,info,idCheck,
 }
 
 //fighiting;;

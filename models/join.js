@@ -12,29 +12,29 @@ module.exports = class Join extends Sequelize.Model{
                 type:Sequelize.STRING(40),
                 allowNull:false,
             },
-            /*name:{
+            name:{
                 type:Sequelize.STRING(20),
                 allowNull:false,
-            },*/
+            },
             birth:{
                 type:Sequelize.INTEGER(11),
                 allowNull:false,
                 get:function(){
-                    return (this.getDataValue('birth')).format('YYYY-MM-DD')
+                    return (this.getDataValue('birth')).format('YY-MM-DD')
                 }
             },
             gender:{
                 type:Sequelize.BOOLEAN,
                 allowNull:false,
             },
-            /*contact:{
-                type:Sequelize.INTEGER(11),
+            contact:{
+                type:Sequelize.STRING(11),
                 allowNull:false,
                 get:function(){
                     return (this.getDataValue('contact')).format('000-0000-0000')
                 }
-            },*//*
-            useridx:{
+            },
+            /*useridx:{
                 type:Sequelize.INTEGER,
                 autoIncrement:true,
                 primaryKey:true,

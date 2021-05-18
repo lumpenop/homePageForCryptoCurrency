@@ -19,7 +19,7 @@ nunjucks.configure('views',{
 
 app.use(express.static('public'));
 
-//app.use(cors);
+app.use(cors);
 /*
 app.use(session({
     secret:'aaa',
@@ -51,7 +51,6 @@ sequelize.sync({force:true})
 .catch((err)=>{
     console.log(err);
 })
-
 
 app.use('/',router);
 

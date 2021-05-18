@@ -7,6 +7,7 @@ const fs = require('fs');
 const log = console.log;
 const userRouter = require('./user/index');
 
+
 router.use('/user',userRouter);
 /*router.get('/',(req,res)=>{
            /* data.title = $(this).find('div.news_wrap.api_ani_send div.news_area a.news_tit').attr('title');*/  
