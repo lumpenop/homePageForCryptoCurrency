@@ -111,6 +111,7 @@ a, a:link {
     border: 1px solid rgba(228, 229, 232);
     border-radius: 10px;
     display: inline-block;
+    overFlow: auto;
 }
 .coin_list>h2{
     font-family: '비트로 프라이드 OTF';
