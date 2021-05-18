@@ -67,6 +67,7 @@ async function coinInfo(){
         const info = await main(cnt);
         arr.push(info[0]);
         console.log(cnt);
+        
         await timer(3100);
     }
     return arr;
