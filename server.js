@@ -30,6 +30,10 @@ app.use(session({
     }
 }))
 */
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(express.static('public'));
+
 
 
 
@@ -42,6 +46,7 @@ app.use(session({
     next(error);
 })
 */
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
@@ -55,6 +60,7 @@ sequelize.sync({force:false})
     console.log(err);
 })
 */
+
 
 
 app.use('/',router);

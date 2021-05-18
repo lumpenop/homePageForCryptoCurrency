@@ -1,5 +1,6 @@
-const Sequelize = require('sequelize');
-const moment = require('moment');
+// const Sequelize = require('sequelize');
+// const moment = require('moment');
+
 
 module.exports = class Join extends Sequelize.Model{
     static init(sequelize){
@@ -55,17 +56,18 @@ module.exports = class Join extends Sequelize.Model{
                     //this.getDataValue로 값을 가져오고 .format으로 형식 설정 
                 }
             },
-            
-        },{
-            sequelize,
-            timestamps:false,
-            underscored:false,
-            paranoid:false,
-            Modelname:'Join',
-            tablename:'joins',
-            charset:'utf8',
-            collate:'utf8_general_ci'
 
-        })
-    }
-}
+            
+//         },{
+//             sequelize,
+//             timestamps:false,
+//             underscored:false,
+//             paranoid:false,
+//             Modelname:'Join',
+//             tablename:'joins',
+//             charset:'utf8',
+//             collate:'utf8_general_ci'
+
+//         })
+//     }
+// }
