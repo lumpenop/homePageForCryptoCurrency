@@ -39,12 +39,11 @@
                 <div class="coin_list">
                     <h2>코인 리스트</h2>
                     <ul>
-                        <li>비트코인</li>
-                        <li>이더리움</li>
-                        <li>바나나톡</li>
-                        <li>테조스</li>
-                        <li>이더리움클래식</li>
-                        <li>비트코인캐시</li>
+                    {% for item in coin %}               
+                    <li>{{item[0].market}} <br>    
+                        {{item[0].trade_price}}
+                    </li>
+                    {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -76,5 +75,26 @@
     </div>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script type="text/javascript" src="../../coin_issue.js"></script>
+    <script type="text/javascript">
+
+        
+        
+        // apii=document.querySelector('');
+        function callbackhell(){
+            const url2 = 'http://localhost:3001/info'
+            const options2 = {method: 'POST', headers: {Accept: 'application/json'}};
+            fetch(url2, options2)
+            .then(res => {
+                return res.json();
+            })
+            .then(json=>console.log(JSON.stringify(json)));
+            
+        }
+        
+        callbackhell();
+        setInterval(callbackhell,40000);
+
+
+    </script>
 </body>
 </html>
