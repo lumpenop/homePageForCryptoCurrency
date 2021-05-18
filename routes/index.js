@@ -5,20 +5,24 @@ const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
 const fs = require('fs');
 const log = console.log;
-const mainRouter = require('./main/index');
+
+const userRouter = require('./user/index');
+
 
 router.use('/',mainRouter);
 
 
-// router.get('/',(req,res)=>{
-//            /* data.title = $(this).find('div.news_wrap.api_ani_send div.news_area a.news_tit').attr('title');*/  
-//            const getHtml = async () => {
-//             try {
-//               return await axios.get("https://www.yna.co.kr/sports/all");
-//             } catch (error) {
-//               console.error(error);
-//             }
-//           };
+router.use('/user',userRouter);
+/*router.get('/',(req,res)=>{
+           /* data.title = $(this).find('div.news_wrap.api_ani_send div.news_area a.news_tit').attr('title');*/  
+           /*const getHtml = async () => {
+            try {
+              return await axios.get("https://www.yna.co.kr/sports/all");
+            } catch (error) {
+              console.error(error);
+            }
+          };
+
           
 //           getHtml()
 //             .then(html => {
@@ -26,6 +30,7 @@ router.use('/',mainRouter);
 //               const $ = cheerio.load(html.data);
 //               const $bodyList = $("div.headline-list ul").children("li.section02");
           
+
 //               $bodyList.each(function(i, elem) {
 //                 ulList[i] = {
 //                     title: $(this).find('strong.news-tl a').text(),
@@ -38,6 +43,7 @@ router.use('/',mainRouter);
 //                     */
 //                 };
 //               });
+
           
 //               const data = ulList.filter(n => n.title);
 //               return data;
@@ -46,6 +52,7 @@ router.use('/',mainRouter);
 //             getHtml();
 // })
 
-  
+  */
 
 module.exports = router;
+

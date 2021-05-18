@@ -19,6 +19,10 @@ input{
     
 }
 
+.hidden{
+    display:none;
+}
+
 .submit{
     margin:0 auto;
     display:inline-block;
@@ -69,7 +73,7 @@ h1{
 
 }
 
-#login_email,#login_password{
+#login_email,#login_password,.birth,.gender{
     margin:0 auto;
     margin-top:10px;
     display:block;
@@ -92,7 +96,7 @@ h1{
 }
 
 .mt20{
-    display:inline-block;
+    display:inline-block !important;
     margin-top:20px;
 }
 
@@ -145,6 +149,18 @@ li:before{
 }
 .signup_wrapper{
     height:800px !important;
+}
+
+.birth{
+    width:250px !important;
+}
+
+.gender{
+    width:20px !important;
+}
+
+.signup_wrapper{
+    height:930px !important; 
 }
 /********************signup_agree********************************/
 .form_agree_wrapper{
