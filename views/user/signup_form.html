@@ -42,16 +42,16 @@
         <p class="signup_text mt20" label for="user_name" >이름</p>
         <input type = "text" id ="user_name" name = "user_name" class= "mt20" placehoder="이름">
         <p class="signup_text mt20" label for="password_chk" >주민등록번호</br>
-        <input type = "text" class= "mt20 birth" name="birth" placehoder="주민등록번호 앞자리">
+        <input type = "text" class= "mt20 birth" name="birth" placehoder="주민등록번호 앞자리" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="6"/>
         -
-        <input type = "text" name = "gender" class = "mt20 gender">
+        <input type = "text" name = "gender" class = "mt20 gender" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="1"/> 
         * * * * * *</p> </br>
         <p class="signup_text mt20" label for="phone_num" >핸드폰번호</br>
-            <input type = "text" class= "mt20 phone" name ="phone_num">
+            <input type = "text" class= "mt20 phone" name ="phone_num" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="3"/>
             -
-            <input type = "text" class = "mt20 phone" name = "phone_num">
+            <input type = "text" class = "mt20 phone" name = "phone_num" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="4"/>
             -
-            <input type = "text" class = "mt20 phone" name = "phone_num"></br></p>
+            <input type = "text" class = "mt20 phone" name = "phone_num" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="4"/></br></p>
         <p class = "signup_capcha mt20">캡챠인증</p>
         <button class="g-recaptcha" 
             data-sitekey="reCAPTCHA_site_key" 
