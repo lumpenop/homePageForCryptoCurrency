@@ -1,21 +1,30 @@
 const Main = require("../coin_info")
+const fetch = require('node-fetch');
+const { JSON } = require("sequelize");
+
+
+// async function a(){
+//     /*
+//     const b = await Main();
+//     console.log(b);
+//    */ 
+// }
+// a();
 
 
 
 
-async function a(){
-    /*
-    const b = await Main();
-    console.log(b);
-   */ 
-}
-a();
+let  main  = async (req, res) => {
+    
+    const data = await Main();
+    
+    // const info = await apiCall.start(cnt);
+    
 
-let main  = (req, res) => {
-    Main().then(data => {
-        res.render('./main/index.html',{
-            issue:data
-        });
-})};
-
+    
+    res.render('./main/index.html',{
+        issue:data,
+    });
+};
+    
 exports.mainCon = main;
