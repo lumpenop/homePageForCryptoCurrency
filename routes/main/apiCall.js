@@ -63,12 +63,12 @@ async function coinInfo(){
     const getLen = await getLength();
     console.log(getLen);
     
-    for(var cnt=0; cnt<getLen; cnt=cnt+10){
+    for(var cnt=0; cnt<getLen+10; cnt=cnt+10){
         const info = await main(cnt);
         arr.push(info[0]);
         console.log(cnt);
         
-        await timer(3100);
+        await timer(6500);
     }
     return arr;
 }
@@ -76,16 +76,13 @@ async function coinInfo(){
 let start = async (req, res) => {
     
     
-    const info = await coinInfo();
-    
+    const info = await main(0);
 
     
     res.json({
         coin:info,
     });
-    // res.render('./main/index.html',{
-    //     coin:info,
-    // });
+  
 };
 
 
@@ -94,4 +91,5 @@ module.exports = {
     start:main,
     showAll:showAll,
     coinInfo:start,
+    timer:timer,
 };

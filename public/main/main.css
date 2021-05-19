@@ -114,10 +114,11 @@ a, a:link {
     overFlow: auto;
 }
 .coin_list>h2{
+    margin-top: 20px;
     font-family: '비트로 프라이드 OTF';
 }
 .coin_list>ul{
-    margin-top: 50px;
+    margin-top: 30px;
 }
 .coin_list>ul>li{
     padding:25px;
