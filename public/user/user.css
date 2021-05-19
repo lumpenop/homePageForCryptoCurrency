@@ -1,6 +1,7 @@
 ul,li{
     list-style: none;
 }
+a{text-decoration: none;}
 
 *{margin:0; padding:0}
 
@@ -8,16 +9,15 @@ input{
     font-weight: bold;
 }
 
-.login_wrapper,.signup_wrapper,.form_agree_wrapper,.findpw_wrapper{
+.login_wrapper,.signup_wrapper,.form_agree_wrapper,.findpw_wrapper,.signsuccess_wrapper{
     margin:0 auto;
     width:550px;
     height:700px;
     border:2px solid black; 
     padding-left:50px;
-    padding-right:50px;
-    
-    
+    padding-right:50px;  
 }
+
 
 .hidden{
     display:none;
@@ -30,7 +30,7 @@ input{
     height:50px;
     border-radius:4px;
     border:0;
-    background-color:rgb(225,57,40);
+    background-color:rgb(253, 195, 27);
     color:white;
     font-size:16px;
     font-weight:bold;
@@ -49,11 +49,15 @@ h1{
     margin-bottom:50px;
 }
 
-#email,#password,#password_chk{
+#user_name,#email,#password,#password_chk,.phone{
     width:530px;
     height:40px;
     padding-left:10px;
     padding-right:10px;
+}
+
+.phone{
+    width:130px !important;
 }
 
 
@@ -66,7 +70,7 @@ h1{
     height:50px;
     border-radius:4px;
     border:0;
-    background-color:rgb(225,57,40);
+    background-color:rgb(253, 195, 27);
     color:white;
     font-size:16px;
     font-weight:bold;
@@ -92,7 +96,7 @@ h1{
 
 .red{
     margin-left:20px;
-    color:rgb(225,57,40);
+    color:rgb(253, 195, 27);
 }
 
 .mt20{
@@ -134,9 +138,10 @@ h1{
 
 .signup_bullbox{
     width:550px;
-    height:100px;
+    height:90px;
     margin-top:20px;
     background-color: #ececec;
+    padding-top:10px;
 }
 
 .signup_bullbox>ul>li{
@@ -167,6 +172,11 @@ li:before{
     height:1200px !important; 
     text-align: center;
 }
+
+.signup_wrapper{
+    height:1200px !important; 
+}
+
 
 .scrollbox{
     margin:0 auto;
@@ -199,4 +209,12 @@ li:before{
 
 .ft10{
     font-size:14px;
+}
+
+
+/*************signupsuccess*********************/
+
+.signsuccess_text{
+    margin-top: 200px;
+    margin-bottom: 200px;
 }

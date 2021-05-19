@@ -5,14 +5,14 @@ const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
 const fs = require('fs');
 const log = console.log;
-
+const mainRouter = require('./main/index');
 const userRouter = require('./user/index');
 
-
+router.use('/user',userRouter);
 router.use('/',mainRouter);
 
 
-router.use('/user',userRouter);
+
 /*router.get('/',(req,res)=>{
            /* data.title = $(this).find('div.news_wrap.api_ani_send div.news_area a.news_tit').attr('title');*/  
            /*const getHtml = async () => {
@@ -52,7 +52,7 @@ router.use('/user',userRouter);
 //             getHtml();
 // })
 
-  */
+
 
 module.exports = router;
 
