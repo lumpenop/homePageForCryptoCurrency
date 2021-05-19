@@ -12,7 +12,6 @@ window.addEventListener('change',()=>{
     let tel3 = document.querySelector('.phone3').value.length;
 
     if(id&&password&&passwordChk&& birth==6 && gender && name &&tel1==3 && tel2>=3 && tel3 ==4){
-        console.log('다충족');
         submit.style.background="rgb(253, 195, 27)";
         submit.removeAttribute('disabled');
     }
