@@ -123,9 +123,11 @@
                         }else if(result[i][0].change == "RISE"){
                             h5.innerHTML = per;
                             h5.style.color = 'red';
-                            span.style.color = 'blue';
+                            span.style.color = 'red';
                         }else{
                             h5.innerHTML = per;
+                            h5.style.color = 'black';
+                            span.style.color = 'black';
                         }
 
                         li.appendChild(p);
@@ -164,6 +166,7 @@
                 .catch(
                     console.log('timer errer')
                 )
+                console.log('api error');
                 location.reload(true);
                 history.go(0);
             })
