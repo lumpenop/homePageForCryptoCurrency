@@ -79,13 +79,17 @@ async function coinInfo(){
 
 let start = async (req, res) => {
     
+    try{
+        const info = await main(0);
+        res.json({
+            coin:info,
+        });
+    }catch{
+        console.log('try start()');
+    }
 
-    const info = await main(0);
-    res.json({
-        coin:info,
-    });
-
-
+    
+    
   
 };
 
