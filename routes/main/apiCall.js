@@ -9,13 +9,10 @@ async function showPrice(item){
     const options2 = {method: 'GET', headers: {Accept: 'application/json'}};
 
     const response = await fetch(url2, options2);
-    try{
-        const data = await response.json();
-        return data;
-    }catch{
-        console.log('showPrice() error');
-    }
-    
+
+    const data = await response.json();
+    return data;
+
 
     
 }
