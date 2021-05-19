@@ -60,7 +60,10 @@
                     <h2>Coin issue</h2>
                 {% for item in issue %}               
                 <ul>
-                    <li>{{item.title}}</li>
+                    <a href={{item.url}}>
+                        <li>{{item.title}}</li>
+                    </a>
+                    
                 </ul>
                 {% endfor %}
                 </div>

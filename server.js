@@ -49,7 +49,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
 
-/*
+
 sequelize.sync({force:false})
 .then(()=>{
     console.log('succ');
@@ -57,7 +57,7 @@ sequelize.sync({force:false})
 .catch((err)=>{
     console.log(err);
 })
-*/
+
 
 
 chat;

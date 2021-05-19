@@ -65,7 +65,7 @@ a, a:link {
     display: inline-block;
     padding: 30px 36px 30px 60px;
 }
-.my_area>button{
+.my_area > button{
     width: 80px;
     height: 40px;
     margin-right: 10px;
@@ -73,15 +73,18 @@ a, a:link {
     font-family: '비트로 프라이드 OTF';
     background-color: rgb(255, 253, 219);
     border-radius: 5px;
+    border-width: 1px;
     
 }
 .my_area>button:hover{ 
-    box-shadow: 200px 0 0 0 rgba(243, 227, 3, 0.918) inset, -200px 0 0 0 rgba(243, 227, 3, 0.918) inset; 
+    box-shadow: 200px 0 0 0 rgb(171, 214, 16) inset, -200px 0 0 0 rgb(171, 214, 16) inset; 
+    color: slategray;
 }
 
 .main{
     padding: 50px 0;
     border-bottom: 1px solid rgba(228, 229, 232);
+    border-color: yellowgreen;
 }
 
 .main_title{
@@ -141,7 +144,7 @@ a, a:link {
 .main_con2{
 
     width:1200px;
-    margin: 0 auto;
+    margin: 20px auto;
 
     text-align: center;
 
@@ -177,11 +180,15 @@ a, a:link {
     font-size: 25px;
     font-family: '비트로 프라이드 OTF';
 }
-.coin_issue>ul>li{
+.coin_issue>ul li{
     padding:15px;
     font-size: 19px;
     font-family: '비트로 프라이드 OTF';
 }
+.coin_issue>ul li:hover{
+    color: rgb(164, 189, 107);
+}
+
 .mid_footer{
     margin: 50px 0;
     width: 100%;
@@ -240,8 +247,12 @@ a, a:link {
     font-family: '비트로 프라이드 OTF';
 }
 .footer_list>ul>li>a{
-    color: rgb(189, 190, 192);
+    color: rgb(158, 163, 173);
     font-family: '비트로 프라이드 OTF';
+}
+
+.footer_list>ul>li>a:hover{
+    color: rgb(192, 199, 212);
 }
 
 .footer_list>ul>li{
@@ -249,7 +260,7 @@ a, a:link {
 }
 
 .coin_list ul li{
-    border: 1px solid rgba(228, 229, 232);
+    border-top: 1px solid rgba(228, 229, 232);
     display: flex;
 }
 
