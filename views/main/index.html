@@ -62,7 +62,7 @@
                     <h2>Coin issue</h2>
                 {% for item in issue %}               
                 <ul>
-                    <a href={{item.url}}>
+                    <a href={{item.url}} target="_blank">
                         <li>{{item.title}}</li>
                     </a>
                     
@@ -213,7 +213,7 @@ const timer = ms => new Promise(res => setTimeout(res,ms));
             
             
         }
-        
+      
         function clickCoin(coin){
             var chartdata = [];
             $.getJSON(`https://poloniex.com/public?command=returnChartData&currencyPair=${coin}&start=1455699200&end=9999999999&period=14400`, function (data) {
