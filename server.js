@@ -9,7 +9,7 @@ const {sequelize} = require('./models');
 
 const cors = require('cors');
 const router = require('./routes/index')
-//const session = require('express-session');
+const session = require('express-session');
 
 app.set('view engine','html');
 nunjucks.configure('views',{
@@ -19,7 +19,7 @@ nunjucks.configure('views',{
 app.use(express.static('public'));
 
 app.use(cors());
-/*
+
 app.use(session({
     secret:'aaa',
     resave:false,
@@ -29,7 +29,7 @@ app.use(session({
         secure:false
     }
 }))
-*/
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'));
