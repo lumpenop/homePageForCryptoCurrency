@@ -21,7 +21,9 @@
             <div class= "signup_bar"></div>
             <h5 class= "inblock ft_16 red">정보입력</h5>
         </div>
-     
+
+    <!--회원가입 정보 입력-->
+        
         <p class="signup_text mt20" ><label for="email" >이메일</p>
         <input type = "email"  id ="email" class= "mt20" name = "email" placehoder="이메일을 입력해주세요">
         <p class="idchk chk"></p><br>
@@ -39,42 +41,49 @@
         <p class="signup_text mt20" label for="password_chk" >비밀번호 확인</p>
         <input type = "password" id ="password_chk" class= "mt20" placehoder="비밀번호를 다시 입력해주세요">
         <p class="pwchk chk"></p><br>
+
         <p class="signup_text mt20" label for="user_name" >이름<br></p>
         <input type = "text" id ="user_name" name = "user_name" class= "mt20" placehoder="이름">
-        <p class="signup_text mt20" label for="password_chk" >주민등록번호</br>
-        <input type = "text" class= "mt20 birth" name="birth" placehoder="주민등록번호 앞자리" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="6"/>
+        
+        <p class="signup_text mt20" label for="birth" >주민등록번호</br>
+        <input type = "text" class= "mt20 birth" name="birth" id="birth" placehoder="주민등록번호 앞자리" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="6"/>
         -
         <input type = "text" name = "gender" class = "mt20 gender" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="1"/> 
         * * * * * *</p> </br>
+        
         <p class="signup_text mt20" label for="phone_num" >핸드폰번호</br>
-            <input type = "text" class= "mt20 phone" name ="phone_num" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="3"/>
+            <input type = "text" id="phone_num" class= "mt20 phone phone1" name ="phone_num" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="3"/>
             -
-            <input type = "text" class = "mt20 phone" name = "phone_num" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="4"/>
+            <input type = "text" class = "mt20 phone phone2" name = "phone_num" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="4"/>
             -
-            <input type = "text" class = "mt20 phone" name = "phone_num" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="4"/></br></p>
-        <p class = "signup_capcha mt20">캡챠인증</p>
+            <input type = "text" class = "mt20 phone phone3" name = "phone_num" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="4"/></br></p>
+        
+        <!--    <p class = "signup_capcha mt20">캡챠인증</p>
         <button class="g-recaptcha" 
             data-sitekey="reCAPTCHA_site_key" 
             data-callback='onSubmit' 
             data-action='submit'>Submit</button>
+        -->
         
         <input type="submit" class = "sign_upbtn submit mt20" value = "작성 완료" disabled>
 
         </form>
 </div>
 <script>
-
+/*
     function onSubmit(token) {
         document.getElementById("demo-form").submit();
     }
+*/
 </script>
 
 <script type = "text/javascript" src="/user/usersignup_form.js"></script>
 <script type = "text/javascript">
 
-let email = document.querySelector('#email');
 //////id 체크//////
 
+
+let email = document.querySelector('#email');
 function id_check(){
     let email2 = document.querySelector('#email').value;
     let idchk=document.querySelector('.idchk');
@@ -94,8 +103,10 @@ function id_check(){
     .then(json =>{
         console.log(json);
         if(json.check){
+            idchk.style.color="green";
             idchk.innerHTML = '올바른 아이디 입니다.'
         }else{
+            idchk.style.color="red";
             idchk.innerHTML = "중복된 아이디 입니다."
         }
     })
@@ -106,24 +117,8 @@ function id_check(){
 email.addEventListener('focusout',id_check);
 
 
-/*
-async function userid_check(){
-    let data = await axios.get(`http://localhost:3000/user/userid_check?userid=${userid.value}`);
-    //http://localhost:3000/user/userid_ckeck?userid=${userid.value}
-    //AJAX가져옴> 중복> false 중복x>true
-    console.log(data);
-    login_flag = data.data.login;
-    if(login_flag){
-        userid_msg.innerHTML = '올바른 아이디 입니다.'
-        userid_msg.style.color = 'green';
-    }else{
-        userid_msg.innerHTML = '중복된 아이디 입니다.';
-        userid_msg.style.color = 'red';
-    }
-}
-    userid.addEventListener('focusout',userid_check);
 
-*/
+
 </script>
 
 </body>

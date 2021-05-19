@@ -9,7 +9,7 @@ input{
     font-weight: bold;
 }
 
-.login_wrapper,.signup_wrapper,.form_agree_wrapper,.findpw_wrapper,.signsuccess_wrapper{
+.login_wrapper,.signup_wrapper,.form_agree_wrapper,.findpw_wrapper,.success_wrapper{
     margin:0 auto;
     width:550px;
     height:700px;
@@ -30,7 +30,7 @@ input{
     height:50px;
     border-radius:4px;
     border:0;
-    background-color:rgb(253, 195, 27);
+    background-color:rgb(255,253,219);
     color:white;
     font-size:16px;
     font-weight:bold;
@@ -70,7 +70,7 @@ h1{
     height:50px;
     border-radius:4px;
     border:0;
-    background-color:rgb(253, 195, 27);
+    background-color:rgb(255, 253, 219);
     color:white;
     font-size:16px;
     font-weight:bold;
@@ -214,7 +214,28 @@ li:before{
 
 /*************signupsuccess*********************/
 
-.signsuccess_text{
-    margin-top: 200px;
-    margin-bottom: 200px;
+.ant{
+    margin:0 auto;
+    width:550px;
+    height:550px;
+    background:url("https://files.mybox.naver.com/KakaoTalk_20210519_200848652.gif?userid=nara7875&useridx=6479449&attachment=2&NDriveSvcType=NHN%2FND-WEB%20Ver") no-repeat;
+    background-size:contain;
+}
+
+.submit1{
+    margin:0 auto;
+    margin-top:20px;
+    display:inline-block;
+    width:550px;
+    height:50px;
+    border-radius:4px;
+    border:0;
+    background-color:rgb(253, 195, 27);
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.success_wrapper{
+    text-align: center;
 }
