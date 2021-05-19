@@ -21,7 +21,6 @@
 #### 사용 기술
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=JavaScript&amp=white&style=plastic" style="max-width: 100%; user-select: auto;">
 - html/css
-- Javascript
 - node.js
 - mysql
 
