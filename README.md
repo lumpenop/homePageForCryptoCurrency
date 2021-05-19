@@ -1,4 +1,4 @@
-## 미니 프로젝트 Honey Ants![발견](https://user-images.githubusercontent.com/68418005/118859304-0be5e680-b915-11eb-8dd2-f0ae61e1db5c.png)
+## 미니 프로젝트 Honey Ants
 
 
 ### 프로젝트 주제
