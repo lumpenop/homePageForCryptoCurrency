@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 :root {
-	--dark-color-a: #ff7866;
-	--dark-color-b: #ff9473;
+	--dark-color-a: #ffff80;
+	--dark-color-b:#ffffe6;
 	--light-color: #ffffff;
 	--success-color: #5cb85c;
 	--error-color: #d9534f;
@@ -33,10 +33,11 @@ a {
 .btn {
 	cursor: pointer;
 	padding: 5px 15px;
-	background: var(--light-color);
-	color: var(--dark-color-a);
+	background: #ffff80;
+	color: #ff9900;
 	border: 0;
 	font-size: 17px;
+	font-weight: bold;
 }
 
 /* Chat Page */
@@ -50,7 +51,7 @@ a {
 
 .chat-header {
 	background: var(--dark-color-a);
-	color: #fff;
+	color: #ff9900;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	padding: 15px;
@@ -66,11 +67,13 @@ a {
 
 .chat-sidebar {
 	background: var(--dark-color-b);
-	color: #fff;
+	color: #ff9900;
 	padding: 20px 20px 60px;
 	overflow-y: scroll;
 }
-
+#room-name{
+	background:  #fff0b3;
+}
 .chat-sidebar h2 {
 	font-size: 20px;
 	background: rgba(0, 0, 0, 0.1);
@@ -95,7 +98,7 @@ a {
 .chat-messages .message {
 	padding: 10px;
 	margin-bottom: 15px;
-	background-color: var(--light-color);
+	background-color: #ffffe6;
 	border-radius: 5px;
 	/* overflow-wrap: break-word; */
 }
@@ -137,10 +140,9 @@ a {
 
 .join-header {
 	text-align: center;
+	color:#ff9900;
 	padding: 20px;
 	background: var(--dark-color-a);
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
 }
 
 .join-main {
@@ -152,7 +154,8 @@ a {
 }
 
 .join-main .form-control {
-	margin-bottom: 20px;
+	height: 60px;
+	margin-bottom: 10px;
 }
 
 .join-main label {
@@ -175,8 +178,10 @@ a {
 }
 
 .join-main .btn {
+	height: 50px;
+	margin-left: 20%;
 	margin-top: 20px;
-	width: 80%;
+	width: 40%;
 }
 
 @media (max-width: 700px) {
@@ -188,10 +193,14 @@ a {
 		display: none;
 	}
 }
+#room>option{
+	height: 100%;
+	font-size: 17px;
+}
 .join-footer{
 	text-align: center;
 	padding: 20px;
-	height: 70px;
+	height: 50px;
 	background: var(--dark-color-a);
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;

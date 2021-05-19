@@ -9,10 +9,12 @@ async function showPrice(item){
     const options2 = {method: 'GET', headers: {Accept: 'application/json'}};
 
     const response = await fetch(url2, options2);
-    const data = await response.json();
-    
 
+    const data = await response.json();
     return data;
+
+
+    
 }
 
 async function showAll(){
@@ -35,16 +37,18 @@ async function showAll(){
 async function main(cnt){
     let arr = [];
     const result = await showAll();
+
     for(var i=cnt; i<cnt+10;i++){
         if(i>=result.length){
             cnt=0;
             break;
         }
+        
         const coin = await showPrice(result[i]);
-        arr.push(coin);
-    }
-
-    return arr;
+        arr.push(coin);  
+    }return arr;
+   
+    
 }
 
 
@@ -75,13 +79,17 @@ async function coinInfo(){
 
 let start = async (req, res) => {
     
-    
-    const info = await main(0);
+    try{
+        const info = await main(0);
+        res.json({
+            coin:info,
+        });
+    }catch{
+        console.log('start() error')
+    }
 
     
-    res.json({
-        coin:info,
-    });
+    
   
 };
 

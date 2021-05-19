@@ -5,6 +5,7 @@ const port = process.env.SERVER_PORT || 3001;
 const bodyParser = require('body-parser');
 const nunjucks = require('nunjucks');
 const {sequelize} = require('./models');
+const chat = require('./chatcord/server.js')
 //const { SequelizeScopeError } = require('sequelize/types');
 
 const cors = require('cors');
@@ -30,9 +31,6 @@ app.use(session({
     }
 }))
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
-app.use(express.static('public'));
 
 
 
@@ -62,7 +60,7 @@ sequelize.sync({force:false})
 */
 
 
-
+chat;
 app.use('/',router);
 
 
