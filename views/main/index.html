@@ -116,15 +116,14 @@
     <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script type="text/javascript" src="../../coin_issue.js"></script>
-    <script type="text/javascript">
-
-        const timer = ms => new Promise(res => setTimeout(res,ms));
+    <script type="text/javascript">        
+const timer = ms => new Promise(res => setTimeout(res,ms));
         
         // apii=document.querySelector('');
         async function callbackhell(){
             const url2 = 'http://localhost:3001/info'
             const options2 = {method: 'POST', headers: {Accept: 'application/json'}};
-           
+            
             let fet = await fetch(url2, options2)
             .then(res=>{
                 return res.json()
@@ -132,25 +131,26 @@
             .then(json=>{
                 const result = json['coin']
                 document.title = result[0][0].trade_price.toLocaleString('ko-KR');;
-                console.log(result);
+        
                 result.sort(function (a, b) { 
                     return a[0].trade_price < b[0].trade_price ? 1 : -1; 
                 });
-               
+                
                 let list = document.querySelector('.coin_list > ul');
                 let coinList = document.querySelectorAll('.coin_list > ul > li');
                 for(var i=0; i<result.length;i++){
                     if(coinList[0]==undefined){
                         
                         let li = document.createElement('li');
-
+        
                         let p = document.createElement('p');
                         p.innerHTML = result[i][0].market;
-          
+                        p.setAttribute('onclick',`clickCoin('USDT_${result[i][0].market.split("-")[1]}')`)
+            
                         let h5 = document.createElement('h5');
                         let span = document.createElement('span');
                         span.innerHTML = result[i][0].trade_price.toLocaleString('ko-KR');
-
+        
                         var per = `${Math.round(result[i][0].change_rate * 10000) / 100}%`;
                         if(result[i][0].change == "FALL"){
                             h5.innerHTML = `-${per}`;
@@ -165,19 +165,19 @@
                             h5.style.color = '#383838';
                             span.style.color = '#383838';
                         }
-
+        
                         li.appendChild(p);
                         li.appendChild(span);
                         li.appendChild(h5);
                         list.appendChild(li);
                         
                     }else{
-                     
+                        
                         const span = coinList[i].querySelector('span');
                         const h5 = coinList[i].querySelector('h5');
-                  
+                    
                         span.innerHTML = result[i][0].trade_price.toLocaleString('ko-KR');
-
+        
                         var per = `${Math.round(result[i][0].change_rate * 10000) / 100}%`;
                         if(result[i][0].change == "FALL"){
                             h5.innerHTML = `-${per}`;
@@ -201,53 +201,54 @@
                 timer(3000)
                 callbackhell();
             })
-
+        
             
             
         }
-
-        function draw3(coin){
-				var chartdata = [];
-				$.getJSON(`https://poloniex.com/public?command=returnChartData&currencyPair=${coin}&start=1455699200&end=9999999999&period=14400`, function (data) {
-					$.each(data, function(i, item){
-						chartdata.push([item.date*1000, item.open, item.high, item.low, item.close]);
-					});
-				}).done(function(){
-					Highcharts.stockChart('coin_chart',{
-						title: {
-							text: `${coin}`
-						},
-						rangeSelector: {
-							buttons: [
-								{type: 'hour',count: 1,text: '1h'}, 
-								{type: 'day',count: 1,text: '1d'}, 
-								{type: 'all',count: 1,text: 'All'}
-							],
-							selected: 2,
-							inputEnabled: true
-						},
-						plotOptions: {
-							candlestick: {
-								downColor: 'blue',
-								upColor: 'red'
-							}
-						},
-						series: [{
-							name: `${coin}`,
-							type: 'candlestick',
-							data: chartdata,
-							tooltip: {
-								valueDecimals: 8
-							}
-						}]
-					});
-				});
-			}
-        draw3('USDT_BTC');
+        
+        function clickCoin(coin){
+            var chartdata = [];
+            $.getJSON(`https://poloniex.com/public?command=returnChartData&currencyPair=${coin}&start=1455699200&end=9999999999&period=14400`, function (data) {
+                $.each(data, function(i, item){
+                    chartdata.push([item.date*1000, item.open, item.high, item.low, item.close]);
+                });
+            }).done(function(){
+                Highcharts.stockChart('coin_chart',{
+                    title: {
+                        text: `${coin}`
+                    },
+                    rangeSelector: {
+                        buttons: [
+                            {type: 'hour',count: 1,text: '1h'}, 
+                            {type: 'day',count: 1,text: '1d'}, 
+                            {type: 'all',count: 1,text: 'All'}
+                        ],
+                        selected: 2,
+                        inputEnabled: true
+                    },
+                    plotOptions: {
+                        candlestick: {
+                            downColor: 'blue',
+                            upColor: 'red'
+                        }
+                    },
+                    series: [{
+                        name: `${coin}`,
+                        type: 'candlestick',
+                        data: chartdata,
+                        tooltip: {
+                            valueDecimals: 8
+                        }
+                    }]
+                });
+            });
+        }
+        
+        
+        
+        clickCoin('USDT_BTC');
         callbackhell();
         setInterval(callbackhell,4000);
-        
-
 
     </script>
 </body>

@@ -265,6 +265,11 @@ a, a:link {
     color: #494949;
 }
 
+.coin_list ul li p:hover{
+    cursor: pointer;
+    color: darkkhaki;
+}
+
 .coin_list ul li span{
     width: 81px;
 }
