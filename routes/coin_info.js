@@ -18,7 +18,7 @@ async function Main(){
   $bodyList.each(function(i, elem) {
     ulList[i] = {
         title: $(this).find('div.news_wrap.api_ani_send div.news_area a.news_tit').text(),
-        url: 'search.naver.com/search.naver'+$(this).find('div.news_wrap.api_ani_send div.news_area a').attr('href')
+        url: $(this).find('div.news_wrap.api_ani_send div.news_area a.news_tit').attr('href')
     };
   });
 
