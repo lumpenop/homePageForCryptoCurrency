@@ -21,13 +21,14 @@ a, a:link {
 }
 .header_wrap{
     width: 100%;
-    height: 150px;
+    height: 130px;
     position: fixed;
+    z-index: 9999;
     border-bottom: 5px solid rgb(253, 195, 27);
 }
 .header{
     width: 1200px;
-    height: 150px;
+    height: 130px;
     margin: 0 auto;
     position: relative;
     background-color: #fff;
@@ -35,13 +36,15 @@ a, a:link {
 
 .gnb{
     float: left;
-    position: absolute;
-    left: 180px;
+}
+
+.gnb_con{
+    margin-left: 30px;
 }
 
 .gnb_con>li{
     display: inline-block;
-    padding: 60px;
+    padding: 38px 60px;
     font-size: 20px;
     font-weight: bold;
 }
@@ -58,9 +61,8 @@ a, a:link {
 }
 
 .my_area{
-    position: absolute;
-    right: -20px;
-    padding: 60px;
+    display: inline-block;
+    padding: 30px 36px 30px 60px;
 }
 .my_area>button{
     width: 80px;
@@ -82,27 +84,30 @@ a, a:link {
     margin-top: 50px;
 }
 
+.main_title{
+    display: inline-block;
+}
+
 .main_con{
     width:1200px;
     text-align: center;
+    display:flex;
 }
+
+
+
 #divide{
-    height: 200px;
+    height: 190px;
     display: block;
 }
-.coin_chart{
-    width: 800px;
-    height: 500px;
+#coin_chart{
+    width: 800px !important;
+    height: 500px !important;
     border: 1px solid rgba(228, 229, 232);
     border-radius: 10px;
     display: inline-block;
 }
-.coin_chart>h2{
-    font-family: '비트로 프라이드 OTF';
-}
-.coin_chart>img{
-    margin-top: 50px;
-}
+
 
 .coin_list{
     margin-left: 30px;
@@ -126,8 +131,10 @@ a, a:link {
 
 .main_con2{
     width: 1200px;
+    height: 400px;
     margin-top: 100px;
     text-align: center;
+    display: flex;
 }
 
 .Elon_twiter{
