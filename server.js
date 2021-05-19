@@ -1,23 +1,24 @@
-  
+require('dotenv').config();  
 const express = require('express');
 const app = express();
+const port = process.env.SERVER_PORT || 3001;
 const bodyParser = require('body-parser');
 const nunjucks = require('nunjucks');
 const {sequelize} = require('./models');
 //const { SequelizeScopeError } = require('sequelize/types');
-require('dotenv').config();
-const env = process.env;
-const port = env.SERVER_PORT || 3001;
+
 const cors = require('cors');
 const router = require('./routes/index')
-const session = require('express-session');
+//const session = require('express-session');
 
 app.set('view engine','html');
 nunjucks.configure('views',{
     express:app,
 })
 
-//app.use(cors);
+app.use(express.static('public'));
+
+app.use(cors());
 /*
 app.use(session({
     secret:'aaa',
@@ -33,7 +34,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'));
 
-app.use('/',router);
+
 
 
 // app.use('/',(req,res)=>{
@@ -45,15 +46,24 @@ app.use('/',router);
     next(error);
 })
 */
-// sequelize.sync({force:true})
-// .then(()=>{
-//     console.log('succ');
-// })
-// .catch((err)=>{
-//     console.log(err);
-// })
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
 
 
+/*
+sequelize.sync({force:false})
+.then(()=>{
+    console.log('succ');
+})
+.catch((err)=>{
+    console.log(err);
+})
+*/
+
+
+
+app.use('/',router);
 
 
 app.listen(port, ()=>{
