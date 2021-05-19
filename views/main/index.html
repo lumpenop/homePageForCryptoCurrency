@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto</title>
     <link rel="stylesheet" href="./main/main.css">
+    <link href="./main/로고.png" rel="shortcut icon" type="image/x-icon">
     
 </head>
 <body>
@@ -94,12 +95,10 @@
             })
             .then(json=>{
                 const result = json['coin']
-                
+                document.title = result[0][0].trade_price.toLocaleString('ko-KR');;
                 console.log(result);
                 result.sort(function (a, b) { 
-
                     return a[0].trade_price < b[0].trade_price ? 1 : -1; 
-
                 });
                
                 let list = document.querySelector('.coin_list > ul');
