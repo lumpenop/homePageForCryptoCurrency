@@ -5,7 +5,7 @@ const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
 const fs = require('fs');
 const log = console.log;
-
+const mainRouter = require('./main/index');
 const userRouter = require('./user/index');
 
 
