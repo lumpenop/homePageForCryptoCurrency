@@ -88,7 +88,7 @@ let loginCheck=async(req,res)=>{
 
     if(result == null){
         console.log('없음');
-        res.redirect('/user/login?flag=0');
+        res.redirect('/user?flag=0');
     }else{
         console.log('있음');
         req.session.uid=email;
