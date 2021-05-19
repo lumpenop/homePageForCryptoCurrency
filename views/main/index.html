@@ -161,9 +161,11 @@
                 }
             })
             .catch(()=>{
-                timer(3000);
+                timer(3000)
+                .catch(
+                    console.log('timer errer')
+                )
                 location.reload(true);
-                location.href = location.href;
                 history.go(0);
             })
 
