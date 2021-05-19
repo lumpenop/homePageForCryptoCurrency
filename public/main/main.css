@@ -2,9 +2,6 @@
     margin: 0;
     padding: 0;
 }
-body{
-    display: block;
-}
 
 ul,li{
     list-style: none;
@@ -17,7 +14,7 @@ a, a:link {
 .wrap{
     width: 100%;
 }
-.logo>img{
+.logo img{
     width: 130px;
     height: 130px;
     float: left;
@@ -27,6 +24,7 @@ a, a:link {
     height: 130px;
     position: fixed;
     z-index: 9999;
+    background: white;
     border-bottom: 5px solid rgb(253, 195, 27);
 }
 .header{
@@ -144,6 +142,7 @@ a, a:link {
 
     width:1200px;
     margin: 0 auto;
+
     text-align: center;
 
 }
@@ -163,7 +162,6 @@ a, a:link {
 .twitter-timeline{
     padding: 5px;
 }
-
 .coin_issue{
     margin-left: 600px;
     width: 550px;
@@ -206,23 +204,23 @@ a, a:link {
     background-color: rgb(248, 248, 249);
 }
 
-.footer_main{
+.footer_con{
     width: 1200px;
-    height: 300px;
+    height: 220px;
     margin: 0 auto;
 }
-.footer_con{
+.footer_main_con{
     margin-top: 30px;
     width: 400px;
     color: rgb(189, 190, 192);
     font-family: '비트로 프라이드 OTF';
 }
-.footer_con>strong{
+.footer_main_con>strong{
     font-size: 20px;
     color:rgb(37, 37, 37);
     
 }
-.footer_con2{
+.footer_main_con2{
     width: 400px;
     display: inline-block;
     color: rgb(189, 190, 192);
@@ -248,4 +246,25 @@ a, a:link {
 
 .footer_list>ul>li{
     margin-top: 10px;
+}
+
+.coin_list ul li{
+    border: 1px solid rgba(228, 229, 232);
+    display: flex;
+}
+
+.coin_list ul li p,
+.coin_list ul li span,
+.coin_list ul li h5{
+    margin-left: 14px;    
+}
+
+.coin_list ul li p{
+    width: 90px;
+    font-family: '비트로 프라이드 OTF';
+    color: #494949;
+}
+
+.coin_list ul li span{
+    width: 81px;
 }
