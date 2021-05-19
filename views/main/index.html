@@ -14,6 +14,7 @@
             <div class="header">
                 <div class="logo">
                     <img src="./main/로고.png" alt="">
+                    <h2 class="main_title">Honeypot ants</h2>
                 </div>
                 <section class="gnb">
                     <ul class="gnb_con">
@@ -37,9 +38,8 @@
         <div id="divide"></div>
         <section class="main">
             <div class="main_con">
-                <div class="coin_chart">
-                    <h2>코인 차트</h2>
-                    <img src="./main/비트코인차트.png" alt="">
+                <div id="coin_chart">
+                    
                 </div>
                 <div class="coin_list">
                     <h2>코인 리스트</h2>
@@ -74,6 +74,9 @@
             </div>
         </footer>
     </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script type="text/javascript" src="../../coin_issue.js"></script>
     <script type="text/javascript">
@@ -91,7 +94,13 @@
             })
             .then(json=>{
                 const result = json['coin']
+                
                 console.log(result);
+                result.sort(function (a, b) { 
+
+                    return a[0].trade_price < b[0].trade_price ? 1 : -1; 
+
+                });
                
                 let list = document.querySelector('.coin_list > ul');
                 let coinList = document.querySelectorAll('.coin_list > ul > li');
@@ -126,9 +135,7 @@
                         list.appendChild(li);
                         
                     }else{
-                        console.log(
-                            'h9i'
-                        )
+                     
                         const span = coinList[i].querySelector('span');
                         const h5 = coinList[i].querySelector('h5');
                   
@@ -142,9 +149,11 @@
                         }else if(result[i][0].change == "RISE"){
                             h5.innerHTML = per;
                             h5.style.color = 'red';
-                            span.style.color = 'blue';
+                            span.style.color = 'red';
                         }else{
                             h5.innerHTML = per;
+                            h5.style.color = 'black';
+                            span.style.color = 'black';
                         }
                         
                     }
@@ -152,7 +161,7 @@
                 }
             })
             .catch(()=>{
-                timer(2000);
+                timer(3000);
                 location.reload(true);
                 location.href = location.href;
                 history.go(0);
@@ -162,11 +171,46 @@
             
         }
 
-        
-        
-        
+        function draw3(coin){
+				var chartdata = [];
+				$.getJSON(`https://poloniex.com/public?command=returnChartData&currencyPair=${coin}&start=1455699200&end=9999999999&period=14400`, function (data) {
+					$.each(data, function(i, item){
+						chartdata.push([item.date*1000, item.open, item.high, item.low, item.close]);
+					});
+				}).done(function(){
+					Highcharts.stockChart('coin_chart',{
+						title: {
+							text: `${coin}`
+						},
+						rangeSelector: {
+							buttons: [
+								{type: 'hour',count: 1,text: '1h'}, 
+								{type: 'day',count: 1,text: '1d'}, 
+								{type: 'all',count: 1,text: 'All'}
+							],
+							selected: 2,
+							inputEnabled: true
+						},
+						plotOptions: {
+							candlestick: {
+								downColor: 'blue',
+								upColor: 'red'
+							}
+						},
+						series: [{
+							name: `${coin}`,
+							type: 'candlestick',
+							data: chartdata,
+							tooltip: {
+								valueDecimals: 8
+							}
+						}]
+					});
+				});
+			}
+        draw3('USDT_BTC');
         callbackhell();
-        setInterval(callbackhell,3000);
+        setInterval(callbackhell,4000);
         
 
 

@@ -5,18 +5,19 @@
 		<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
 	</head>
 	<body>
-		<div id="container" style="height: 400px; min-width: 310px"></div>
+		<div id="container" style="height: 500px; min-width: 400px"></div>
 		<script>
-			function draw3(){
+
+			function draw3(coin){
 				var chartdata = [];
-				$.getJSON('https://poloniex.com/public?command=returnChartData&currencyPair=BTC_ETH&start=1455699200&end=9999999999&period=14400', function (data) {
+				$.getJSON(`https://poloniex.com/public?command=returnChartData&currencyPair=${coin}&start=1455699200&end=9999999999&period=14400`, function (data) {
 					$.each(data, function(i, item){
 						chartdata.push([item.date*1000, item.open, item.high, item.low, item.close]);
 					});
 				}).done(function(){
 					Highcharts.stockChart('container',{
 						title: {
-							text: 'ETH/BTC'
+							text: `${coin}`
 						},
 						rangeSelector: {
 							buttons: [
@@ -34,7 +35,7 @@
 							}
 						},
 						series: [{
-							name: 'ETH/BTC',
+							name: `${coin}`,
 							type: 'candlestick',
 							data: chartdata,
 							tooltip: {
@@ -44,7 +45,7 @@
 					});
 				});
 			}
-			draw3();
+			draw3('USDT_BTC');
 		</script>
 	</body>
 </html>
