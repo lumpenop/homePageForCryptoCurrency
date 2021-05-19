@@ -15,7 +15,8 @@ const { JSON } = require("sequelize");
 
 
 let  main  = async (req, res) => {
-    
+
+
     const data = await Main();
     
     // const info = await apiCall.start(cnt);
@@ -23,6 +24,8 @@ let  main  = async (req, res) => {
 
     
     res.render('./main/index.html',{
+        userid:req.session.uid,
+        isLogin:req.session.islogin,
         issue:data,
     });
 };

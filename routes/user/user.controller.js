@@ -1,7 +1,9 @@
 const {Join} = require('../../models/index');
 
 let login = (req,res) =>{
-    res.render('./user/login.html');
+    res.render('./user/login.html',{
+        flag:req.query.flag
+    });
 }
 
 let signUp= (req,res) =>{
@@ -38,7 +40,9 @@ let signSuccess = async(req,res) =>{
     }
 
 
-    res.render('./user/signup_success.html');
+    res.render('./user/signup_success.html',{
+        name,
+    });
 }
 
 let findPw = (req,res) =>{
@@ -66,12 +70,42 @@ let idCheck = async (req,res)=>{
     let result = await Join.findOne({
         where:{email,}
     });
-    if (result ==undefined) idFlag= true;
+    if (result ==undefined)idFlag= true;
     res.json({
         check:idFlag,
         email,
     });
     
+}
+
+
+let loginCheck=async(req,res)=>{
+    let email = req.body.email;
+    let pw = req.body.password;
+    let result = await Join.findOne({
+        where:{email,pw,}
+    })
+
+    if(result == null){
+        console.log('없음');
+        res.redirect('/user/login?flag=0');
+    }else{
+        console.log('있음');
+        req.session.uid=email;
+        console.log(req.session.uid);
+        req.session.islogin=true;
+        console.log(req.session.islogin);
+        req.session.save(()=>{
+            res.redirect('/');
+        })    
+    }
+}
+
+let logout = (req,res)=>{
+    req.session.destroy(()=>{
+        console.log('로그아웃들어옴');        
+            res.redirect('/');            
+    })
 }
 /*
 let login_check = async (req,res) =>{
@@ -125,7 +159,7 @@ let userid_check = async(req,res) =>{
 }
 */
 module.exports={
-    login,signUp,signupForm,signSuccess,findPw,pwSuccess,info,idCheck,
+    login,signUp,signupForm,signSuccess,findPw,pwSuccess,info,idCheck,loginCheck,logout,
 }
 
 //fighiting;;
