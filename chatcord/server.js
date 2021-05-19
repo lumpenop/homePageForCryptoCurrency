@@ -15,6 +15,7 @@ const {
   userLeave,
   getRoomUsers
 } = require('./utils/users');
+function chat(){
 //utils의 users에서 할당된 각각의 변수 가져오는 것
 
 //정적 파일은 public 폴더 안에 있는 것을 사용
@@ -84,12 +85,15 @@ io.on('connection', socket => {
       // Send users and room info
       io.to(user.room).emit('roomUsers', {
         room: user.room,
-        users: getRoomUsers(user.room)
+        users: getRoomUsers(user.room),
+        
       });
     }
   });
 });
+console.log('in');
 
-const PORT = process.env.PORT || 3000;
+}
+// const PORT = process.env.PORT || 3000;
 
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+module.exports = server.listen(3000, chat());
