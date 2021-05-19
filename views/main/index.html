@@ -105,7 +105,7 @@
                         console.log(result[i][0].change);
                         let h5 = document.createElement('h5');
                         let span = document.createElement('span');
-                        span.innerHTML = result[i][0].trade_price;
+                        span.innerHTML = result[i][0].trade_price.toLocaleString('ko-KR');
 
                         var per = `${Math.round(result[i][0].change_rate * 10000) / 100}%`;
                         if(result[i][0].change == "FALL"){
