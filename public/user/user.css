@@ -216,15 +216,17 @@ li:before{
 
 .ant{
     margin:0 auto;
+    margin-top:100px;
+    margin-bottom:50px;
     width:550px;
-    height:550px;
-    background:url("https://files.mybox.naver.com/KakaoTalk_20210519_200848652.gif?userid=nara7875&useridx=6479449&attachment=2&NDriveSvcType=NHN%2FND-WEB%20Ver") no-repeat;
+    height:350px;
+    background:url("./ant.gif") no-repeat;
     background-size:contain;
 }
 
 .submit1{
     margin:0 auto;
-    margin-top:20px;
+    margin-top:40px;
     display:inline-block;
     width:550px;
     height:50px;
@@ -237,5 +239,6 @@ li:before{
 }
 
 .success_wrapper{
+    margin-top:30px;
     text-align: center;
 }
