@@ -216,15 +216,17 @@ li:before{
 
 .ant{
     margin:0 auto;
+    margin-top:100px;
+    margin-bottom:50px;
     width:550px;
-    height:550px;
-    background:url("https://postfiles.pstatic.net/MjAyMTA1MTlfMTkw/MDAxNjIxNDM0NTA2MTkx.e4NXWktnhGPJcJS33LF9k8IClwA5vJklmmGghq_f8t8g.Qxs2MlQhVhtebMWfXsx8xsnrHlnrGpQlWdp7hiZh-r8g.GIF.nara7875/KakaoTalk_20210519_200848652.gif?type=w580") no-repeat;
+    height:350px;
+    background:url("./ant.gif") no-repeat;
     background-size:contain;
 }
 
 .submit1{
     margin:0 auto;
-    margin-top:20px;
+    margin-top:40px;
     display:inline-block;
     width:550px;
     height:50px;
@@ -237,5 +239,6 @@ li:before{
 }
 
 .success_wrapper{
+    margin-top:30px;
     text-align: center;
 }
