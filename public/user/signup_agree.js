@@ -20,6 +20,17 @@ function uncheckAll() {
 
 chkAll.onclick = checkAll;
 
+/************체크박스 해제***************/
+let chk1= document.querySelector('.chk_necessary1');
+let chk2= document.querySelector('.chk_necessary2');
+
+chk1.addEventListener('click',()=>{
+    if(!chk1.checked)chkAll.checked=false;
+});
+
+chk2.addEventListener('click',()=>{
+    if(!chk1.checked)chkAll.checked=false;
+});
 /***********next btn**************/
 
 
@@ -38,7 +49,9 @@ window.addEventListener('change',()=>{
 
     if(chk2.checked && chk1.checked){
         submits.removeAttribute('disabled');
+        submits.style.background="rgb(253, 195, 27)";
     }else if(!chk2.checked || !chk1.checked){
         submits.setAttribute('disabled','true');
+        submits.style.background="rgb(255, 253,219)";
     }
 })
