@@ -102,7 +102,7 @@
 
                         let p = document.createElement('p');
                         p.innerHTML = result[i][0].market;
-                        console.log(result[i][0].change);
+          
                         let h5 = document.createElement('h5');
                         let span = document.createElement('span');
                         span.innerHTML = result[i][0].trade_price.toLocaleString('ko-KR');
@@ -120,16 +120,32 @@
                             h5.innerHTML = per;
                         }
 
-                        
-                        
-                        
-                        console.log(result[i][0].change)
-                        
-                        
                         li.appendChild(p);
                         li.appendChild(span);
                         li.appendChild(h5);
                         list.appendChild(li);
+                        
+                    }else{
+                        console.log(
+                            'h9i'
+                        )
+                        const span = coinList[i].querySelector('span');
+                        const h5 = coinList[i].querySelector('h5');
+                  
+                        span.innerHTML = result[i][0].trade_price.toLocaleString('ko-KR');
+
+                        var per = `${Math.round(result[i][0].change_rate * 10000) / 100}%`;
+                        if(result[i][0].change == "FALL"){
+                            h5.innerHTML = `-${per}`;
+                            h5.style.color = 'blue';
+                            span.style.color = 'blue';
+                        }else if(result[i][0].change == "RISE"){
+                            h5.innerHTML = per;
+                            h5.style.color = 'red';
+                            span.style.color = 'blue';
+                        }else{
+                            h5.innerHTML = per;
+                        }
                         
                     }
                     
@@ -145,10 +161,12 @@
             
             
         }
+
+        
         
         
         callbackhell();
-        setInterval(callbackhell,70000);
+        setInterval(callbackhell,3000);
         
 
 
