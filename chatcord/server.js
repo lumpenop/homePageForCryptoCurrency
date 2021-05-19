@@ -20,7 +20,7 @@ const {
 //정적 파일은 public 폴더 안에 있는 것을 사용
 app.use(express.static(path.join(__dirname, 'public')));
 
-const botName = 'ChatCord Bot';
+const botName = 'HoneyChat Bot';
 
 // Run when client connects
 // io.on('connection',callback) // 유저의 socket연결 첫 단계
@@ -36,7 +36,7 @@ io.on('connection', socket => {
     socket.join(user.room);
 
     // Welcome current user
-    socket.emit('message', formatMessage(botName, 'Welcome to ChatCord!'));
+    socket.emit('message', formatMessage(botName, 'Welcome to Honey Chat!'));
     //emit을 통해 접속한 클라이언트에게 이벤트를 발송
 
     // Broadcast when a user connects
