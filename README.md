@@ -4,12 +4,13 @@
 
 
 ### 프로젝트 주제
-암호화폐 자동매매 사이트
+암호화폐 자동매매 사이트 
+<p>   <img src="https://img.shields.io/badge/Bitcoin-#F7931A?style=plastic&logo=bitcoin&logoColor=white"/> </p>
 - 암호화폐 거래소인 업비트 API를 사용하여 암호화폐를 자동으로 매수/매도 하는 웹사이트 
 
 #### 프로젝트 목표
-1. html / css / vanilla.js / node.js 만을 이용하여 MVC 디자인패턴과 ORM을 적용한 웹사이트 구현
-2. 구현된 웹사이트에 거래소 API 적용
+1. html / css / vanilla.js / node.js 만을 이용하여 MVC 디자인패턴과 ORM을 적용한 웹사이트 구현 ✔️
+2. 구현된 웹사이트에 거래소 API 적용 
 3. 암호화폐 시세 분석 및 자동매매 알고리즘 구현
 
 #### 팀원
