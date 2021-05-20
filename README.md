@@ -5,7 +5,7 @@
 
 ### 프로젝트 주제
 암호화폐 자동매매 사이트 
-<p>   <img src="https://img.shields.io/badge/Bitcoin-#F7931A?style=plastic&logo=bitcoin&logoColor=white"/> </p>
+<img src="https://img.shields.io/badge/?style=plastic&logo=bitcoin&logoColor=white"/>
 - 암호화폐 거래소인 업비트 API를 사용하여 암호화폐를 자동으로 매수/매도 하는 웹사이트 
 
 #### 프로젝트 목표
