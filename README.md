@@ -1,6 +1,6 @@
 
-![로고](https://user-images.githubusercontent.com/68418005/118906639-1de97880-b959-11eb-97f7-07df502f994a.png)
-## 미니 프로젝트 Honey Ants
+
+## 미니 프로젝트 Honey Ants <p>![로고](https://user-images.githubusercontent.com/68418005/118906639-1de97880-b959-11eb-97f7-07df502f994a.png)</p>
 
 
 ### 프로젝트 주제
