@@ -1,3 +1,4 @@
+![로고](https://user-images.githubusercontent.com/68418005/118906579-fa263280-b958-11eb-8470-87cebba54354.png)
 ## 미니 프로젝트 Honey Ants
 
 
