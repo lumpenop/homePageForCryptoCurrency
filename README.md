@@ -15,11 +15,12 @@ html / css / vanilla.js / node.js 만을 이용하여 MVC 디자인패턴과 ORM
 2021.05.16 ~ 2021.05.19
 
 #### 팀원
-- main page
-  - 김승원
-  - 강지현
-- user page 
-  - 이승희
+- front end
+  - main page 
+    - 김승원
+    - 강지현
+  - user page 
+    - 이승희
 - back end
   - 오미희
 
